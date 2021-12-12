@@ -1,0 +1,30 @@
+package jfcraft.recipe;
+
+/** Makes shovel.
+ *
+ * @author vivan doshi
+ *
+ * Created : Nov 6, 2020
+ */
+
+import jfcraft.item.*;
+import jfcraft.data.*;
+
+public class RecipeShovel extends Recipe {
+  public RecipeShovel() {
+    super(1,3);
+  }
+
+  public Item make(Item items[]) {
+    char id = items[0].id;
+    if (items[1].id != Items.STICK) return null;
+    if (items[2].id != Items.STICK) return null;
+
+    if (id == Items.DIAMOND) return new Item(Items.DIAMOND_SHOVEL, 1.0f);
+    if (id == Items.GOLD_INGOT) return new Item(Items.GOLD_SHOVEL, 1.0f);
+    if (id == Items.IRON_INGOT) return new Item(Items.IRON_SHOVEL, 1.0f);
+    if (id == Blocks.COBBLESTONE) return new Item(Items.STONE_SHOVEL, 1.0f);
+    if (id == Blocks.PLANKS) return new Item(Items.WOOD_SHOVEL, 1.0f);
+    return null;
+  }
+}
